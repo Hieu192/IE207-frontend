@@ -9,7 +9,7 @@ export default function AboutUsPage() {
       <section className="about-us__about-information white">
         <div className="about-us__about-information__wrapper">
           <h1 className="about-us__about-information__title">
-             - Cửa hàng bán đồ ăn nhanh
+             Cửa hàng bán đồ ăn nhanh
             <span className="about-us__about-information__title-after"></span>
           </h1>
           <h4 className="about-us__about-information__subtitle">

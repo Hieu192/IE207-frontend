@@ -28,6 +28,7 @@ import Users from './scenes/admin/users';
 import UserDetails from './scenes/admin/users/user-details';
 import Suppliers from './scenes/admin/suppliers';
 import AboutUsPage from './shared/about-us/page';
+import BestSallerPage from './shared/BestSaller/BestSaller';
 
 const router = createBrowserRouter([
   {
@@ -36,11 +37,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: '',
-        element: <AboutUsPage/>,
+        element: <HomePage/>,
       },
       {
         path: 'product-details/:productId',
         element: <ProductDetails />,
+      },
+      {
+        path: 'about',
+        element: <AboutUsPage/>,
+      },
+      {
+        path: 'bestsaller',
+        element: <BestSallerPage/>,
       },
       {
         path: 'checkout',

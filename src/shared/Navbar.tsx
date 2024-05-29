@@ -1,6 +1,8 @@
 import { useReducer, useState } from 'react';
 import logo from '@/assets/lotteria_logo.svg';
 import { motion } from 'framer-motion';
+import { Navigate } from "react-router-dom";
+
 import {
   Bars3Icon,
   BellIcon,
@@ -66,6 +68,12 @@ const Navbar = () => {
   const closeLoginModal = () => {
     setIsLoginModalOpened(false);
   };
+  
+
+  const style = {
+    cursor: "pointer"
+  };
+
 
   return (
     <div>
@@ -81,12 +89,21 @@ const Navbar = () => {
               </Link>
               {isAboveMediumScreen && (
                 <ul className="mx-8 my-3 flex gap-5 px-3">
-                  <li className=" text-base font-bold text-black">
-                    BESTSELLER
-                  </li>
-                  <li className=" text-base font-bold text-black">Order Now</li>
-                  <li className=" text-base font-bold text-black ">Birthday</li>
-                  <li className=" text-base font-bold text-black">Store</li>
+                  <Link to={'/bestsaller'}>
+                    <li 
+                      className=" text-base font-bold text-black"
+                      style={style}
+                    >
+                      BESTSELLER
+                    </li>
+                  </Link>
+                  <Link to={"/about"}>
+                   <li 
+                    className=" text-base font-bold text-black"
+                    style={style}
+                    >ABOUT US
+                    </li>
+                  </Link>
                 </ul>
               )}
             </div>
@@ -138,17 +155,14 @@ const Navbar = () => {
                 </button>
               </div>
               <ul className="my-3 px-3">
-                <li className="border-b border-zinc-300 py-2 text-base text-slate-600">
+                <li className="border-b border-zinc-300 py-2 text-base text-slate-600"
+                    // style={{hover::pointer}}
+                >
                   BESTSELLER
+                  <Navigate to="/about"/>
                 </li>
                 <li className="border-b border-zinc-300 py-2 text-base text-slate-600">
-                  Order Now
-                </li>
-                <li className="border-b border-zinc-300 py-2 text-base text-slate-600">
-                  Birthday
-                </li>
-                <li className="border-b border-zinc-300 py-2 text-base text-slate-600">
-                  Store
+                  ABOUT US 
                 </li>
               </ul>
             </div>
