@@ -39,9 +39,7 @@ export default function AboutUsPage() {
             </div>
             <h3>Tích điểm dựa trên hóa đơn của bạn</h3>
             <p>
-              Tất cả các khách hàng đã mua sắm tại ForCat có tổng hóa đơn mua
-              sắm tích lũy từ 1000 điểm sẽ được một phần quà giá trị tương
-              đương.
+              
             </p>
           </div>
           <div className="about-us__service__wrapper">

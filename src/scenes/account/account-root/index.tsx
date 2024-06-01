@@ -17,7 +17,7 @@ const AccountRoot = (props: Props) => {
   return (
     <div className="container m-auto mb-10 mt-32 flex max-w-7xl rounded-lg shadow">
       <div className="sidebar basis-80 rounded-l-lg  bg-red-400 text-white">
-        <p className="p-5">LE NGUYEN DUY PHUONG</p>
+        <p className="p-5">Phạm Quang Hiếu</p>
         <ul className="">
           <Link to={'/account/info'}>
             <li

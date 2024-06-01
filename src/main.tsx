@@ -29,6 +29,7 @@ import UserDetails from './scenes/admin/users/user-details';
 import Suppliers from './scenes/admin/suppliers';
 import AboutUsPage from './shared/about-us/page';
 import BestSallerPage from './shared/BestSaller/BestSaller';
+import FilterPage from './shared/Category/filter';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: 'bestsaller',
         element: <BestSallerPage/>,
+      },
+      {
+        path: 'category',
+        element: <FilterPage/>,
       },
       {
         path: 'checkout',
