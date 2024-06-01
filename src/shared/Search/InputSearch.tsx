@@ -13,7 +13,7 @@ function Search({ search }) {
       if (keyword.trim()) {
         navigate(`/category?search=${keyword}`);
       } else {
-        navigate("/");
+        navigate("/category");
       }
     };
 

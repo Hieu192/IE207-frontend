@@ -60,6 +60,7 @@ const filters: Filter[] = [
     id: 'category',
     name: 'Category',
     options: [
+      { value: '', label: 'All', checked: false },
       { value: 'Cơm', label: 'Cơm', checked: false },
       { value: 'Mì khô', label: 'Mì khô', checked: false },
       { value: 'Mì nước', label: 'Mì nước', checked: false },
@@ -70,8 +71,9 @@ const filters: Filter[] = [
     id: 'price',
     name: 'Price',
     options: [
+      { value: '', label: 'All', checked: false },
       { value: '0-50000', label: '0-50.000 đ', checked: false },
-      { value: '50000-100000', label: '0-50.000 đ', checked: false },
+      { value: '50000-100000', label: '50.000-100.000 đ', checked: false },
       { value: '100000-200000', label: '100.000-200.000 đ', checked: false },
       { value: '200000-500000', label: '200.000-500.000 đ', checked: false },
     ]
@@ -177,7 +179,7 @@ const FilterPage: React.FC = () => {
   useEffect(() => {
     void getProductsBySearch();
 
-  }, []);
+  }, [search]);
 
   useEffect(() => {
     void getProductsByCategory();
