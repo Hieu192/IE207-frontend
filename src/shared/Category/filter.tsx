@@ -22,6 +22,7 @@ import { useNavigate } from 'react-router-dom';
 import ProductList from '../ProductList';
 import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import Search from './../Search/InputSearch';
+import Category from '@/scenes/admin/crud/category/Category';
 
 interface SortOption {
   name: string;
@@ -140,7 +141,7 @@ const FilterPage: React.FC = () => {
   const searchParams = new URLSearchParams(decodedQueryString);
   const category = searchParams.get("category")
   const price = searchParams.get("price")
-  const [minPrice, maxPrice] = price === null ? [0, 0] : price.split("-").map(Number);
+  const [minPrice, maxPrice] = (price === null|| price === '') ? [0, 0] : price.split("-").map(Number);
   const sort = searchParams.get("sort")
   const search = searchParams.get("search")
   
@@ -152,10 +153,23 @@ const FilterPage: React.FC = () => {
 
   async function getProductsByCategory() {
     try {
+      const categories = (category === null|| category === '') ? category : category.replace(/ /g, '+');
+      
+      const data = {
+        search: search || '',
+        category: categories || '',
+        sort: sort || ''
+      }
       console.log('test 2');
-      const modifiedCategory = category.replace(/ /g, '+');
+      // const modifiedCategory = category.replace(/ /g, '+');
+      console.log('test vip', category);
+      console.log('test vip', search);
+      console.log('test vip', minPrice);
+      console.log('test vip', maxPrice);
+      console.log('test vip', sort);
       // console.log('productArr: ', `/products/filterv?search=${search}&category=${modifiedCategory}&minPrice=${minPrice}&maxPrice=${maxPrice}&sort=${sort}`)
-      const response = await axiosInstance.get(`/products/filterv?search=${search}&category=${modifiedCategory}&minPrice=${minPrice}&maxPrice=${maxPrice}&sort=${sort}`);
+      const response = await axiosInstance.get(`/products/filterv?search=${data.search}&category=${data.category}&minPrice=${minPrice}&maxPrice=${maxPrice}&sort=${data.sort}`);
+      console.log('test vip');
       const productArr = response.data as ProductFromApi[];
       console.log('productArr: ', productArr);
 
@@ -176,15 +190,30 @@ const FilterPage: React.FC = () => {
       console.log('error: ', e);
     }
   }
-  useEffect(() => {
-    void getProductsBySearch();
-
-  }, [search]);
+  // useEffect(() => {
+  //   void getProductsBySearch();
+  // }, [search]);
 
   useEffect(() => {
     void getProductsByCategory();
 
   }, [category, minPrice, maxPrice, sort, search]);
+
+  // async function getAllProducts() {
+  //   try {
+  //     const response = await axiosInstance.get('/products');
+  //     const productArr = response.data as ProductFromApi[];
+  //     console.log('productArr: ', productArr);
+
+  //     setProducts(productArr);
+  //   } catch (e) {
+  //     console.log('error: ', e);
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   void getAllProducts();
+  // }, []);
 
   async function checkRegisterRecently(idAccount: number | null) {
     try {
