@@ -57,7 +57,7 @@ export default function AboutUsPage() {
           </div>
         </div>
       </section>
-      <section className="about-us__about-members brown-img">
+      {/* <section className="about-us__about-members brown-img">
         <div className="about-us__about-members__wrapper">
           <div className="about-us__about-members__title">
             Đội ngũ nhân viên
@@ -74,7 +74,7 @@ export default function AboutUsPage() {
             <div className="about-us__members__imgs__cover">
               <img
                 className="about-us__members__img"
-                src="/imgs/about-us/nguyenthihongnhung.jpg"
+                src=""
                 alt="Chất lượng thật - Giá trị thật"></img>
             </div>
             <h4>Nguyễn Thị Kim Ngân</h4>
@@ -84,7 +84,7 @@ export default function AboutUsPage() {
             <div className="about-us__members__imgs__cover">
               <img
                 className="about-us__members__img"
-                src="/imgs/about-us/phannguyenhaiyen.webp"
+                src=""
                 alt="Tích điểm"></img>
             </div>
             <h4>Phạm Quang Hiếu</h4>
@@ -92,7 +92,7 @@ export default function AboutUsPage() {
           </div>
           
         </div>
-      </section>
+      </section> */}
       {/* <section className="about-us__banner">
         <img
           className="about-us__banner-img"
@@ -161,7 +161,7 @@ export default function AboutUsPage() {
             <div className="about-us__value__imgs__cover">
               <img
                 className="about-us__value__img"
-                src="https://lh3.googleusercontent.com/proxy/RAW30J8TjhDkjTl-4xIsNCXDqcvEQuQKK-OzZov2Bv9yyQ1ltOp-vnQBG8VDIqlH2Vj7kEsCsp7jR_RghkDVZuln0DYuM2kbaRjgb4SxWTvGpod7xGtM40d2ZrQd3Snrc6CfuAvvJR0u3n5l"
+                src="https://static.tuoitre.vn/tto/i/s626//2015/03/13/te2qSRH8.jpg"
                 alt="Chất lượng thật - Giá trị thật"></img>
             </div>
             <h4>Values - Giá trị.</h4>
@@ -169,33 +169,6 @@ export default function AboutUsPage() {
             Great value for money: Giá cả hợp lý
             </p>
           </div>
-          {/* <div className="about-us__value__wrapper">
-            <div className="about-us__value__imgs__cover">
-              <img
-                className="about-us__value__img"
-                src="/imgs/about-us/about02_services_5_ico.webp"
-                alt="Tích điểm"></img>
-            </div>
-            <h4>Tích điểm dựa trên hóa đơn của bạn</h4>
-            <p>
-              Tất cả các khách hàng đã mua sắm tại ForCat có tổng hóa đơn mua
-              sắm tích lũy từ 1000 điểm sẽ được một phần quà giá trị tương
-              đương.
-            </p>
-          </div>
-          <div className="about-us__value__wrapper">
-            <div className="about-us__value__imgs__cover">
-              <img
-                className="about-us__value__img"
-                src="/imgs/about-us/about02_services_6_ico.webp"
-                alt="Hỗ trợ giao hàng toàn quốc"></img>
-            </div>
-            <h4>Hỗ trợ giao hàng toàn quốc</h4>
-            <p>
-              Miễn phí vận chuyển nội thành thành phố Hồ Chí Minh cho các đơn
-              hàng từ 399.000đ trở lên.
-            </p>
-          </div> */}
         </div>
       </section>
     </main>
