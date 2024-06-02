@@ -422,6 +422,8 @@ const Product = () => {
     setFormProductState({ showForm: false });
   }
 
+  console.log("test suppliers", suppliers);
+
   return (
     <div className="ml-[50px] mt-[-20px] min-h-screen w-full pt-20">
       {formProductState.showForm && (
@@ -1296,12 +1298,12 @@ const Product = () => {
                   </option>
                 ))}
               </select>
-              {formikImportProduct.errors.supplier &&
+              {/* {formikImportProduct.errors.supplier &&
                 formikImportProduct.touched.supplier && (
                   <div className="text-red-400">
                     {formikImportProduct.errors.supplier}
                   </div>
-                )}
+                )} */}
             </div>
           </div>
           <div className="bottom-0 left-0 mt-4 flex w-full justify-center space-x-4 pb-4 sm:absolute sm:mt-0 sm:px-4">
