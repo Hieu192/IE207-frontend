@@ -83,32 +83,6 @@ const Product = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [suppliers, setSuppliers] = useState<Supplier[]>([]);
   const [products, setProducts] = useState<ProductFromApi[]>([]);
-  // const products = [
-  //   {
-  //     "id": 1,
-  //     "name": "gà rán",
-  //     "description": "mô tả",
-  //     "price": 1000000,
-  //     "status": "Đang bán",
-  //     "stock": 2000
-  //   },
-  //   {
-  //     "id": 2,
-  //     "name": "gà rán chiên nước mắm",
-  //     "description": "mô tả gà chiên nước mắm",
-  //     "price": 25000,
-  //     "status": "Đang bán",
-  //     "stock": 25
-  //   },
-  //   {
-  //     "id": 3,
-  //     "name": "gà rán",
-  //     "description": "mô tả gà rán",
-  //     "price": 500000,
-  //     "status": "Đang bán",
-  //     "stock": 50
-  //   }
-  // ]
   const [productUpdate, setProductUpdate] =
     useState<UpdateProductFromApi | null>(null);
 
@@ -221,6 +195,7 @@ const Product = () => {
         quantity: values.quantity,
         price: values.price,
         supplier: values.supplier,
+        // supplier: ''
       };
       console.log('requestData: ', requestData);
 
@@ -1076,6 +1051,7 @@ const Product = () => {
                 multiple
               >
                 {categories.map((category) => (
+                  console.log(category.id ),
                   <option
                     value={category.id}
                     key={`${category.id} ${category.name}`}
@@ -1503,6 +1479,7 @@ const Product = () => {
                 multiple
               >
                 {categories.map((category) => (
+                  // console.log(category.id),
                   <option
                     value={category.id}
                     key={`${category.id} ${category.name}`}

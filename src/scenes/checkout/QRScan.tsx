@@ -384,7 +384,7 @@ const QRScan = () => {
               </Typography.Title>
               {bill && (
                 <QRCode
-                  value={`http://192.168.1.11:8080/api/bills/paid/${bill.billId}?qr_path=http://192.168.1.11:8080/api/bills/paid/${bill.billId}`}
+                  value={`http://192.168.2.50:8080/api/bills/paid/${bill.billId}?qr_path=http://192.168.2.50:8080/api/bills/paid/${bill.billId}`}
                   status={qrStatus ? 'active' : 'expired'}
                 />
               )}
