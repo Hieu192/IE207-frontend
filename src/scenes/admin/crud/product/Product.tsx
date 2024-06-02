@@ -83,6 +83,32 @@ const Product = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [suppliers, setSuppliers] = useState<Supplier[]>([]);
   const [products, setProducts] = useState<ProductFromApi[]>([]);
+  // const products = [
+  //   {
+  //     "id": 1,
+  //     "name": "gà rán",
+  //     "description": "mô tả",
+  //     "price": 1000000,
+  //     "status": "Đang bán",
+  //     "stock": 2000
+  //   },
+  //   {
+  //     "id": 2,
+  //     "name": "gà rán chiên nước mắm",
+  //     "description": "mô tả gà chiên nước mắm",
+  //     "price": 25000,
+  //     "status": "Đang bán",
+  //     "stock": 25
+  //   },
+  //   {
+  //     "id": 3,
+  //     "name": "gà rán",
+  //     "description": "mô tả gà rán",
+  //     "price": 500000,
+  //     "status": "Đang bán",
+  //     "stock": 50
+  //   }
+  // ]
   const [productUpdate, setProductUpdate] =
     useState<UpdateProductFromApi | null>(null);
 
@@ -151,6 +177,7 @@ const Product = () => {
     validationSchema: updateProductSchema,
     onSubmit: async (values) => {
       console.log('update values: ', values);
+      console.log('id: ', productUpdate?.id);
 
       try {
         const response = await axiosInstance.post('/products/update', {
@@ -195,7 +222,6 @@ const Product = () => {
         quantity: values.quantity,
         price: values.price,
         supplier: values.supplier,
-        // supplier: ''
       };
       console.log('requestData: ', requestData);
 
@@ -330,44 +356,44 @@ const Product = () => {
     console.log('button event: ', e.currentTarget);
     const button = e.currentTarget;
     const id = parseInt(button.id.substring(button.id.lastIndexOf('-') + 1));
-    // const responseData = await fetchUpdateProduct(id);
-    // setProductUpdate(responseData);
-    // console.log('responseData: ', responseData);
+    const responseData = await fetchUpdateProduct(id);
+    setProductUpdate(responseData);
+    console.log('responseData: ', responseData);
     void getAllCategories();
 
     setFormProductState({ showForm: true, type: 'update' });
 
-    // void formikUpdateProduct.setFieldValue('name', responseData.name, false);
-    // void formikUpdateProduct.setFieldTouched('name', false);
-    // void formikUpdateProduct.setFieldValue(
-    //   'price',
-    //   Math.floor(responseData.price),
-    //   false,
-    // );
-    // void formikUpdateProduct.setFieldTouched('price', false);
-    // void formikUpdateProduct.setFieldValue(
-    //   'description',
-    //   responseData.description,
-    // );
+    void formikUpdateProduct.setFieldValue('name', responseData.name, false);
+    void formikUpdateProduct.setFieldTouched('name', false);
+    void formikUpdateProduct.setFieldValue(
+      'price',
+      Math.floor(responseData.price),
+      false,
+    );
+    void formikUpdateProduct.setFieldTouched('price', false);
+    void formikUpdateProduct.setFieldValue(
+      'description',
+      responseData.description,
+    );
 
-    // void formikUpdateProduct.setFieldValue(
-    //   'categories',
-    //   responseData.categories,
-    //   false,
-    // );
-    // void formikUpdateProduct.setFieldTouched('categories', false);
-    // axiosInstance
-    //   .get('/products/image', {
-    //     params: {
-    //       productId: responseData.id,
-    //       imageName: 'anh 1',
-    //     },
-    //     responseType: 'blob',
-    //   })
-    //   .then((res) => {
-    //     setPreviewImage(URL.createObjectURL(res.data));
-    //   })
-    //   .catch((err) => console.log(err));
+    void formikUpdateProduct.setFieldValue(
+      'categories',
+      responseData.categories,
+      false,
+    );
+    void formikUpdateProduct.setFieldTouched('categories', false);
+    axiosInstance
+      .get('/products/image', {
+        params: {
+          productId: responseData.id,
+          imageName: 'anh 1',
+        },
+        responseType: 'blob',
+      })
+      .then((res) => {
+        setPreviewImage(URL.createObjectURL(res.data));
+      })
+      .catch((err) => console.log(err));
   }
 
   async function deleteProduct() {
@@ -395,6 +421,8 @@ const Product = () => {
   function hideProductFormHandler() {
     setFormProductState({ showForm: false });
   }
+
+  console.log("test suppliers", suppliers);
 
   return (
     <div className="ml-[50px] mt-[-20px] min-h-screen w-full pt-20">
@@ -1051,7 +1079,6 @@ const Product = () => {
                 multiple
               >
                 {categories.map((category) => (
-                  console.log(category.id ),
                   <option
                     value={category.id}
                     key={`${category.id} ${category.name}`}
@@ -1271,12 +1298,12 @@ const Product = () => {
                   </option>
                 ))}
               </select>
-              {formikImportProduct.errors.supplier &&
+              {/* {formikImportProduct.errors.supplier &&
                 formikImportProduct.touched.supplier && (
                   <div className="text-red-400">
                     {formikImportProduct.errors.supplier}
                   </div>
-                )}
+                )} */}
             </div>
           </div>
           <div className="bottom-0 left-0 mt-4 flex w-full justify-center space-x-4 pb-4 sm:absolute sm:mt-0 sm:px-4">
@@ -1479,7 +1506,6 @@ const Product = () => {
                 multiple
               >
                 {categories.map((category) => (
-                  // console.log(category.id),
                   <option
                     value={category.id}
                     key={`${category.id} ${category.name}`}

@@ -47,7 +47,7 @@ const ProductCard = ({ product }: Props) => {
   return (
     <div className="rounded-lg shadow">
       <div className="flex flex-col">
-        <img src={productImage} className="h-40 rounded-t-lg" alt="" />
+        <img src={productImage} className="h-60 w-50 rounded-t-lg" alt="" />
       </div>
       <div className="p-3 pb-10">
         <p className="font-semibold text-slate-800">{product.name}</p>
