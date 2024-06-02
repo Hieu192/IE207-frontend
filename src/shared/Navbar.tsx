@@ -15,6 +15,7 @@ import { useAppSelector } from '@/store';
 import CartIcon from './CartIcon';
 import UserIconComponent from './UserIconComponent';
 import { Link } from 'react-router-dom';
+import InputSearch from './Search/InputSearch'
 
 type ClickedIconStateType = {
   user?: boolean;
@@ -97,6 +98,14 @@ const Navbar = () => {
                       BESTSELLER
                     </li>
                   </Link>
+                  <Link to={'/category'}>
+                    <li 
+                      className=" text-base font-bold text-black"
+                      style={style}
+                    >
+                      DANH MỤC
+                    </li>
+                  </Link>
                   <Link to={"/about"}>
                    <li 
                     className=" text-base font-bold text-black"
@@ -104,6 +113,7 @@ const Navbar = () => {
                     >ABOUT US
                     </li>
                   </Link>
+                  <InputSearch/>
                 </ul>
               )}
             </div>
@@ -160,6 +170,12 @@ const Navbar = () => {
                 >
                   BESTSELLER
                   <Navigate to="/about"/>
+                </li>
+                <li className="border-b border-zinc-300 py-2 text-base text-slate-600"
+                    // style={{hover::pointer}}
+                >
+                  DANH MỤC
+                  <Navigate to="/category"/>
                 </li>
                 <li className="border-b border-zinc-300 py-2 text-base text-slate-600">
                   ABOUT US 
