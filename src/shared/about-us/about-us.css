@@ -24,7 +24,6 @@
   
   section.brown-img {
     background-color: #3f271b; /* Màu nền mặc định */
-    background-image: url('../../../../public/imgs/about-us/background-member.png'); /* Đường dẫn đến hình ảnh nền */
     background-size: cover; /* Hiển thị hình ảnh sao cho nó phủ đầy toàn bộ background */
     background-position: center; /* Hiển thị hình ảnh ở giữa */
     color: white;

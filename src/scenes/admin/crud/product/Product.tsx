@@ -238,6 +238,7 @@ const Product = () => {
   });
 
   async function addImportProductToDB(data: ProductImportType) {
+    console.log("test id nhap hang:", data.supplier)
     const response = await axiosInstance.post('/staffs/importNote', data);
     const importNoteId = response.data as number | null;
     if (importNoteId) {
@@ -1288,10 +1289,13 @@ const Product = () => {
                 id="category-create"
                 className="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
                 {...formikImportProduct.getFieldProps('supplier')}
+                
               >
+                <option value="" disabled selected hidden>Chọn nhà cung cấp</option>
                 {suppliers.map((supplier) => (
                   <option
                     value={supplier.id}
+                    defaultValue={supplier.id}
                     key={`${supplier.id} ${supplier.name}`}
                   >
                     {supplier.name}
