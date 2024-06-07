@@ -64,8 +64,10 @@ const filters: Filter[] = [
       { value: '', label: 'All', checked: false },
       { value: 'Cơm', label: 'Cơm', checked: false },
       { value: 'Mì khô', label: 'Mì khô', checked: false },
-      { value: 'Mì nước', label: 'Mì nước', checked: false },
+      { value: 'Nước', label: 'Nước ngọt', checked: false },
       { value: 'Gà rán', label: 'Gà rán', checked: false },
+      { value: 'Pizza', label: 'Pizza', checked: false },
+      { value: 'Hamburger', label: 'Hamburger', checked: false },
     ],
   },
   {
@@ -337,7 +339,7 @@ const FilterPage: React.FC = () => {
           </Dialog>
         </Transition>
 
-        <main className="mx-auto px-2 sm:px-6 lg:px-8">
+        <main className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900">New Arrivals</h1>
 
