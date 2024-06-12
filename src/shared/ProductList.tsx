@@ -9,7 +9,7 @@ type Props = {
 const ProductList = ({ products }: Props) => {
   return (
     <div className="py-8 px-16">
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid grid-cols-5 gap-5">
         {products.map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}
