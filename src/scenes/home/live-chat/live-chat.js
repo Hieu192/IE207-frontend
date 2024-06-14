@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 
 const LiveChat = () => {
   useEffect(() => {
-    // Configs
     const liveChatBaseUrl = document.location.protocol + '//' + 'livechat.fpt.ai/v36/src';
     const LiveChatSocketUrl = 'livechat.fpt.ai:443';
     const FptAppCode = 'f69bd57171701202b9d22e78fe9613a2';
@@ -73,8 +72,8 @@ const LiveChat = () => {
 
     // Clean up on unmount
     return () => {
-      document.body.removeChild(FptLiveChatScript);
-      document.body.removeChild(FptLiveChatStyles);
+      // document.body.removeChild(FptLiveChatScript);
+      // document.body.removeChild(FptLiveChatStyles);
     };
   }, []);
 
